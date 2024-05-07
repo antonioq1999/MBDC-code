@@ -1,5 +1,14 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-# Create your views here.
-def index(request):
-    return HttpResponse("Hello, world. This is the index view of Demoapp.")
+from datetime import datetime
+
+def home(request):
+    return HttpResponse("Welcome to Little Lemon restaurant")
+
+def display_date(request):
+    date_joined = datetime.today().year
+    return HttpResponse(date_joined)
+
+def menu(request):
+    text = """<h1 style="color: #F4CE14;"> This is Little Lemon again!</h1>"""
+    return HttpResponse(text)
